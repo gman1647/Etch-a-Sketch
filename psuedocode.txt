@@ -1,0 +1,28 @@
+Just a sketch of how I think I might do this:
+
+First Step: the grid
+Create a container div in html
+create a function (maybe?) to add one square
+Loop it to create 16
+Add them to the DOM using js 
+Grid should be about 960px
+
+check out CSS Grid to see how we might make them line up
+
+Second step: the hover
+create a hover function with an event listner for hover
+add css tags for hover that changes the squares color
+Play a bit with the colors and color selections
+
+Add a but to promt for number of squares per side
+Grid should always fit in the same size pad (no idea how to do this)
+    limit input to 100
+    check out button tags and prompts
+    The pixels of any size should fit in the same grid
+
+Other stuff:
+color picker
+rainbow colors
+add increasing darker colors after each pass through
+add a pixel slider
+
