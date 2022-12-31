@@ -1,12 +1,27 @@
+* {
+    box-sizing: border-box;
+}
 #container {
     width: 960px;
     height: 960px;
     margin: auto;
     background-color: black;
-    display: grid;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .pixel {
     background-color: red;
+    border: 1px solid black;
+    height: 60px;
+}
+
+.gridRows {
+    display: flex;
+    background-color: green;
+    flex-direction: column;
+    justify-content: space-evenly;
+    width: 60px;
     border: 1px solid black;
 }
