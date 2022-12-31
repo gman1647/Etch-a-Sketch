@@ -1,0 +1,12 @@
+#container {
+    width: 960px;
+    height: 960px;
+    margin: auto;
+    background-color: black;
+    display: grid;
+}
+
+.pixel {
+    background-color: red;
+    border: 1px solid black;
+}
