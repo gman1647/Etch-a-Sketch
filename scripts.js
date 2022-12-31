@@ -2,7 +2,9 @@ let gridRows = document.createElement('div');
 const container = document.getElementById("container");
 let pixel = document.createElement('div')
 
-let width = 16;
+let width = 100;
+let pixelSize = (960/width) + "px";
+console.log(pixelSize)
 
 function addRows (rows){
     for (let i=0; i < (rows*rows); i++) {
@@ -11,6 +13,7 @@ function addRows (rows){
         gridRows.classList.add('gridRows');
         gridRows.setAttribute('id', i);
         container.appendChild(gridRows);
+        gridRows.style.width = pixelSize;
     }
     }
 
@@ -21,6 +24,7 @@ function addPixels (rows){
         pixel.classList.add('pixel');
         column = document.getElementById(i);
         column.appendChild(pixel);
+
     }
 }
 
