@@ -4,9 +4,9 @@ let pixel = document.createElement('div')
 
 let width = 10;
 let containerWidth = 500
-let pixelSize = makePixels(containerWidth,width)
+let pixelSize = makePixelsSquare(containerWidth,width)
 
-function makePixels (containerWidth, width) {
+function makePixelsSquare (containerWidth, width) {
     let pixelSize = (containerWidth/width) + 'px';
     return pixelSize;
 }
@@ -18,7 +18,7 @@ function addRows (rows){
         ids = 'pixel' + i;
         gridRows.setAttribute('id', (ids));
         container.appendChild(gridRows);
-        gridRows.style.width = makePixels(containerWidth,rows);
+        gridRows.style.width = makePixelsSquare(containerWidth,rows);
         gridRows.addEventListener('mouseenter', () => {
         gridRows.style.backgroundColor = "#646665";
         });
@@ -36,9 +36,9 @@ sliderWidth.oninput = function() {
     }
     output.textContent = this.value;
     width = this.value;
-    makePixels(containerWidth, width);
+    makePixelsSquare(containerWidth, width);
     addRows(width)
 }
 
-makePixels(containerWidth,width);
+makePixelsSquare(containerWidth,width);
 addRows(width);
