@@ -3,8 +3,13 @@ const container = document.getElementById("container");
 let pixel = document.createElement('div')
 
 let width = 10;
-let pixelSize = (500/width) + "px";
-console.log(pixelSize)
+let containerWidth = 500
+let pixelSize = makePixels(containerWidth,width)
+
+function makePixels (containerWidth, width) {
+    let pixelSize = (containerWidth/width) + 'px';
+    return pixelSize;
+}
 
 function addRows (rows){
     for (let i=0; i < (rows*rows); i++) {
@@ -13,22 +18,13 @@ function addRows (rows){
         ids = 'pixel' + i;
         gridRows.setAttribute('id', (ids));
         container.appendChild(gridRows);
-        gridRows.style.width = pixelSize;
+        gridRows.style.width = makePixels(containerWidth,rows);
         gridRows.addEventListener('mouseenter', () => {
         gridRows.style.backgroundColor = "#646665";
         });
     }
     }
 
-//addRows(width)
-/*
-function colorPixels (rows) {
-    for (let i=0; i < (rows*rows); i++) {
-        ids = 'pixel' + i;
-        pixelSketched = document.getElementById(ids);pixelSketched.addEventListener
-
-}};
-*/
 let sliderWidth = document.getElementById('pixelSide')
 let output = document.getElementById('demo')
 output.textContent = sliderWidth.value;
@@ -40,8 +36,9 @@ sliderWidth.oninput = function() {
     }
     output.textContent = this.value;
     width = this.value;
-    pixelSize = (500/width) + "px";
+    makePixels(containerWidth, width);
     addRows(width)
 }
 
-addRows(width)
+makePixels(containerWidth,width);
+addRows(width);
