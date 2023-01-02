@@ -56,7 +56,7 @@ let classicButton = document.querySelector('.classic');
 classicButton.addEventListener("click", () => {
     clearBoard()
     let drawColor = "#646665";
-    let boardColor = "#rgb(187,187,198)";
+    let boardColor = "rgb(187,187,198)";
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -117,5 +117,11 @@ unionButton.addEventListener("click", () => {
     let boardColor = "#071b2c";
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
+});
 
+let resetButton = document.querySelector('.reset');
+resetButton.addEventListener("click", () => {
+    clearBoard()
+    makePixelsSquare(containerWidth, width);
+    addRows(width,drawColor,boardColor);
 });
