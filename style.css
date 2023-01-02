@@ -54,6 +54,9 @@ button {
     background-color: rgb(187,187,198);
 }
 
+.colorPickers {
+    text-align: center;
+}
 .blackAndWhite {
     color: black;
     background-color: white;
