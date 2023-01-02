@@ -43,8 +43,6 @@ sliderWidth.oninput = function() {
 makePixelsSquare(containerWidth,width);
 addRows(width,drawColor,boardColor);
 
-
-
 function clearBoard () {
     for (let i = 0; i < (width*width); i++) {
         ids = 'pixel' + i;
@@ -52,6 +50,7 @@ function clearBoard () {
         container.removeChild(toRemove);
     }
 }
+
 let classicButton = document.querySelector('.classic');
 classicButton.addEventListener("click", () => {
     clearBoard()
@@ -119,9 +118,54 @@ unionButton.addEventListener("click", () => {
     addRows(width,drawColor,boardColor);
 });
 
+let randomButton = document.querySelector('.random');
+randomButton.addEventListener('click', () => {
+    clearBoard()
+    let drawColor = randomColor();
+    let boardColor = randomColor();
+    makePixelsSquare(containerWidth, width);
+    addRows(width,drawColor,boardColor);
+  });
+
 let resetButton = document.querySelector('.reset');
 resetButton.addEventListener("click", () => {
     clearBoard()
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
+
+let rainbowButton = document.querySelector('.rainbow');
+rainbowButton.addEventListener('click', () => {
+    clearBoard()
+    let boardColor = "#000000";
+    makePixelsSquare(containerWidth, width);
+    addRowsRainbow(width,boardColor);
+  });
+
+
+
+function addRowsRainbow (rows,boardColor){
+    for (let i=0; i < (rows*rows); i++) {
+        let board = document.getElementById('container');
+        board.style.backgroundColor = boardColor;
+        let gridRows = document.createElement('div')
+        gridRows.classList.add('gridRows');
+        ids = 'pixel' + i;
+        gridRows.setAttribute('id', (ids));
+        container.appendChild(gridRows);
+        gridRows.style.width = makePixelsSquare(containerWidth,rows);
+        gridRows.addEventListener('mouseenter', () => {
+        gridRows.style.backgroundColor = randomColor();
+        });
+    }
+    }
+
+function randomColor () {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let drawColor = "#" + randomColor;
+    return drawColor;
+}
+
+randomButton = document.getElementById('random')
+randomButton.style.backgroundColor = randomColor()
+randomButton.style.color = 'black';

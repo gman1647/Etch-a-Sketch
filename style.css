@@ -1,5 +1,12 @@
 * {
-    box-sizing: border-box;
+    color: #f7d89e;
+    background-color: #222222;
+    font-family: Sevillana, 'Dancing Script', 'Times New Roman', serif;
+    font-style: italic;
+}
+#page {
+    display: flex;
+    flex-direction: column;
 }
 
 .title {
@@ -10,17 +17,39 @@
     width: 500px;
     height: 500px;
     flex-shrink: 0;
-/*    background-color: rgb(187,187,198); */
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
 }
 
-ul{
-    list-style: none;
+.border {
+    position: relative;
+    height: 711px;
+    width: 711px;
 }
 
-.classic {
+.inBorder {
+    position: absolute;
+    top: 49%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul{
+    list-style: none;
+    padding: 0;
+}
+
+button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 1.3em;
+    font-weight: 700;
+}
+.classic, .reset {
     color: #646665;
     background-color: rgb(187,187,198);
 }
@@ -56,13 +85,14 @@ ul{
 }
 
 .rainbow {
-    color:#646665;
-    background-color:#646665;
+    color:black;
+    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 }
 
 #etchASketch {
     display: flex;
     justify-content: space-evenly;
+    flex-wrap: wrap;
 }
 
 .gridRows {
@@ -71,6 +101,8 @@ ul{
 
 .pixelSlider {
     width: 100%;
+    margin: 0 auto;
+
 }
 
 .slider {
@@ -79,13 +111,28 @@ ul{
     width: 100%;
     height: 15px;
     background: #d3d3d3d3;
-    border: 1px solid hotpink;
-    outline: hotpink;
+    border: 1px solid red;
     opacity: 0.7;
-    -webkit-transition: .2s;
     transition: opacity .2s;
+    max-width: 700px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.slider::-webkit-slider-thumb {
+    -webkit-appearance: none; /* Override default look */
+    appearance: none;
+    width: 25px; /* Set a specific slider handle width */
+    height: 25px; /* Slider handle height */
+    background: #f7d89e; /* Green background */
+    cursor: pointer; /* Cursor on hover */
 }
 
 .slider:hover{
     opacity: 1;
+}
+
+h2, .currentPixels {
+text-align: center;
 }
