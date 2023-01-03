@@ -142,7 +142,17 @@ rainbowButton.addEventListener('click', () => {
     addRowsRainbow(width,boardColor);
   });
 
-
+  let playerChoiceButton = document.querySelector('#applyUserColors');
+  playerChoiceButton.addEventListener('click', () => {
+    let playerColorBackground = document.getElementById('colorPickerBackground').value;
+    let playerDrawColor = document.getElementById('colorPickerDraw').value;
+    clearBoard()
+    makePixelsSquare(containerWidth, width);
+    addRows(width,playerDrawColor,playerColorBackground);
+});
+  
+  
+//PICK UP HERE!!!!!
 
 function addRowsRainbow (rows,boardColor){
     for (let i=0; i < (rows*rows); i++) {
