@@ -1,18 +1,24 @@
+//Variables
 let gridRows = document.createElement('div');
-const container = document.getElementById("container");
 let pixel = document.createElement('div')
-
 let width = 10;
 let containerWidth = 500
 let pixelSize = makePixelsSquare(containerWidth,width)
 let drawColor = "#646665";
 let boardColor = "rgb(187,187,198)";
+const container = document.getElementById("container");
 
+//creates the initial board
+makePixelsSquare(containerWidth,width);
+addRows(width,drawColor,boardColor);
+
+//creates pixel width based on the width of the board and the number of pixels per row
 function makePixelsSquare (containerWidth, width) {
     let pixelSize = (containerWidth/width) + 'px';
     return pixelSize;
 }
 
+//generates the drawing board
 function addRows (rows,drawColor,boardColor){
     for (let i=0; i < (rows*rows); i++) {
         let board = document.getElementById('container');
@@ -29,20 +35,7 @@ function addRows (rows,drawColor,boardColor){
     }
     }
 
-let sliderWidth = document.getElementById('pixelSide')
-let output = document.getElementById('demo')
-output.textContent = sliderWidth.value;
-sliderWidth.oninput = function() {
-    clearBoard();
-    output.textContent = this.value;
-    width = this.value;
-    makePixelsSquare(containerWidth, width);
-    addRows(width,drawColor,boardColor)
-}
-
-makePixelsSquare(containerWidth,width);
-addRows(width,drawColor,boardColor);
-
+//clears the board so that a new board can be generated
 function clearBoard () {
     for (let i = 0; i < (width*width); i++) {
         ids = 'pixel' + i;
@@ -51,6 +44,7 @@ function clearBoard () {
     }
 }
 
+//sets board to 'classic' etch-a-sketch colors
 let classicButton = document.querySelector('.classic');
 classicButton.addEventListener("click", () => {
     clearBoard()
@@ -60,6 +54,7 @@ classicButton.addEventListener("click", () => {
     addRows(width,drawColor,boardColor);
 });
 
+//sets board to a white background with a black draw color
 let blackAndWhiteButton = document.querySelector('.blackAndWhite');
 blackAndWhiteButton.addEventListener("click", () => {
     clearBoard()
@@ -69,6 +64,7 @@ blackAndWhiteButton.addEventListener("click", () => {
     addRows(width,drawColor,boardColor);
 });
 
+//sets board to a black background with a white draw color
 let WhiteAndBlackButton = document.querySelector('.whiteAndBlack');
 WhiteAndBlackButton.addEventListener("click", () => {
     clearBoard()
@@ -79,6 +75,7 @@ WhiteAndBlackButton.addEventListener("click", () => {
 
 });
 
+//sets board to a midnight green background with a silver draw color
 let eaglesButton = document.querySelector('.eagles');
 eaglesButton.addEventListener("click", () => {
     clearBoard()
@@ -86,9 +83,9 @@ eaglesButton.addEventListener("click", () => {
     let boardColor = "#004C54";
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
-
 });
 
+//sets board to a blue background with a red draw color
 let philsButton = document.querySelector('.phils');
 philsButton.addEventListener("click", () => {
     clearBoard()
@@ -96,9 +93,9 @@ philsButton.addEventListener("click", () => {
     let boardColor = "#002D72";
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
-
 });
 
+//sets board to a orange background with a black draw color
 let flyersButton = document.querySelector('.flyers');
 flyersButton.addEventListener("click", () => {
     clearBoard()
@@ -106,9 +103,9 @@ flyersButton.addEventListener("click", () => {
     let boardColor = "#F74902";
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
-
 });
 
+//sets board to a navy background with a gold draw color
 let unionButton = document.querySelector('.union');
 unionButton.addEventListener("click", () => {
     clearBoard()
@@ -118,6 +115,14 @@ unionButton.addEventListener("click", () => {
     addRows(width,drawColor,boardColor);
 });
 
+//generates a random color for use in the rainbow and random buttons
+function randomColor () {
+    let randomColor = Math.floor(Math.random()*16777215).toString(16);
+    let drawColor = "#" + randomColor;
+    return drawColor;
+}
+
+//sets board to a random background color with a random draw color
 let randomButton = document.querySelector('.random');
 randomButton.addEventListener('click', () => {
     clearBoard()
@@ -127,13 +132,12 @@ randomButton.addEventListener('click', () => {
     addRows(width,drawColor,boardColor);
   });
 
-let resetButton = document.querySelector('.reset');
-resetButton.addEventListener("click", () => {
-    clearBoard()
-    makePixelsSquare(containerWidth, width);
-    addRows(width,drawColor,boardColor);
-});
+//draws the random button in a random color each time the page is refreshed
+randomButton = document.getElementById('random')
+randomButton.style.backgroundColor = randomColor()
+randomButton.style.color = 'black';
 
+//sets board to a black background with each pixel being drawn in a random color
 let rainbowButton = document.querySelector('.rainbow');
 rainbowButton.addEventListener('click', () => {
     clearBoard()
@@ -142,18 +146,7 @@ rainbowButton.addEventListener('click', () => {
     addRowsRainbow(width,boardColor);
   });
 
-  let playerChoiceButton = document.querySelector('#applyUserColors');
-  playerChoiceButton.addEventListener('click', () => {
-    let playerColorBackground = document.getElementById('colorPickerBackground').value;
-    let playerDrawColor = document.getElementById('colorPickerDraw').value;
-    clearBoard()
-    makePixelsSquare(containerWidth, width);
-    addRows(width,playerDrawColor,playerColorBackground);
-});
-  
-  
-//PICK UP HERE!!!!!
-
+//special draw function to allow a new color on each pixel to be used with the rainbow button
 function addRowsRainbow (rows,boardColor){
     for (let i=0; i < (rows*rows); i++) {
         let board = document.getElementById('container');
@@ -170,12 +163,32 @@ function addRowsRainbow (rows,boardColor){
     }
     }
 
-function randomColor () {
-    let randomColor = Math.floor(Math.random()*16777215).toString(16);
-    let drawColor = "#" + randomColor;
-    return drawColor;
+//resets board to initial values
+let resetButton = document.querySelector('.reset');
+resetButton.addEventListener("click", () => {
+    clearBoard()
+    makePixelsSquare(containerWidth, width);
+    addRows(width,drawColor,boardColor);
+});
+
+//changes the number of pixels per side onthe board
+let sliderWidth = document.getElementById('pixelSide')
+let output = document.getElementById('demo')
+output.textContent = sliderWidth.value;
+sliderWidth.oninput = function() {
+    clearBoard();
+    output.textContent = this.value;
+    width = this.value;
+    makePixelsSquare(containerWidth, width);
+    addRows(width,drawColor,boardColor)
 }
 
-randomButton = document.getElementById('random')
-randomButton.style.backgroundColor = randomColor()
-randomButton.style.color = 'black';
+//sets the board to a background color chosen by the player with a draw color chosen by the player
+let playerChoiceButton = document.querySelector('#applyUserColors');
+playerChoiceButton.addEventListener('click', () => {
+    let playerColorBackground = document.getElementById('colorPickerBackground').value;
+    let playerDrawColor = document.getElementById('colorPickerDraw').value;
+    clearBoard()
+    makePixelsSquare(containerWidth, width);
+    addRows(width,playerDrawColor,playerColorBackground);
+});

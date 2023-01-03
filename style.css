@@ -4,13 +4,14 @@
     font-family: Sevillana, 'Dancing Script', 'Times New Roman', serif;
     font-style: italic;
 }
-#page {
-    display: flex;
-    flex-direction: column;
-}
 
 .title {
     text-align:center;
+}
+
+#page {
+    display: flex;
+    flex-direction: column;
 }
 
 #userInputs {
@@ -32,13 +33,14 @@
     }
   }
 
-#container {
-    width: 500px;
-    height: 500px;
-    flex-shrink: 0;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+button {
+    padding: 5px 10px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border-radius: 10px;
+    width: 200px;
+    font-size: 1.3em;
+    font-weight: 700;
 }
 
 .border {
@@ -55,28 +57,24 @@
     transform: translate(-50%, -50%);
 }
 
-ul{
-    list-style: none;
-    padding: 0;
-}
-
-button {
-    padding: 5px 10px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-    border-radius: 10px;
-    width: 200px;
-    font-size: 1.3em;
-    font-weight: 700;
-}
-.classic, .reset {
-    color: #646665;
-    background-color: rgb(187,187,198);
+#container {
+    width: 500px;
+    height: 500px;
+    flex-shrink: 0;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .colorPickers {
     text-align: center;
 }
+
+.classic, .reset {
+    color: #646665;
+    background-color: rgb(187,187,198);
+}
+
 .blackAndWhite {
     color: black;
     background-color: white;
@@ -112,14 +110,9 @@ button {
     background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 }
 
-.gridRows {
-    background-color: transparent;
-}
-
 .pixelSlider {
     width: 100%;
     margin: 0 auto;
-
 }
 
 .slider {
@@ -153,6 +146,10 @@ button {
 h2, .currentPixels {
 text-align: center;
 padding: 0 70px;
+}
+
+.gridRows {
+    background-color: transparent;
 }
 
 #applyUserColors {

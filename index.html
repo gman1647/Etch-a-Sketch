@@ -10,39 +10,39 @@
 <body>
     <h1 class="title">Etch-a-Sketch</h1>
     <div id = 'page'>
-    <div id="etchASketch">
-        <div id="userInputs">
-            <div class="buttons">
-                <h2>Colors</h2>
-                <button class="classic">Classic Etch-a-Sketch</button>
-                <button class="blackAndWhite">Black and White</button>
-                <button class="whiteAndBlack">White and Black</button>
-                <button class="eagles">Eagles</button>
-                <button class="phils">Phils and Sixers</button>
-                <button class="flyers">Flyers</button>
-                <button class="union">Union</button>
-                <button class="random" id="random">Random</button>
-                <button class="rainbow">Rainbow</button>
-                <button class="reset">Reset</button>
-            </div>
-            <div class=border>
-                <img id='border' class="inBorder" src ="images/etchasketch.png" alt = "Etch a Sketch">
-                <div class="inBorder" id="container">
-            </div>
+        <div id="etchASketch">
+            <div id="userInputs">
+                <div class="buttons">
+                    <h2>Colors</h2>
+                    <button class="classic">Classic Etch-a-Sketch</button>
+                    <button class="blackAndWhite">Black and White</button>
+                    <button class="whiteAndBlack">White and Black</button>
+                    <button class="eagles">Eagles</button>
+                    <button class="phils">Phils and Sixers</button>
+                    <button class="flyers">Flyers</button>
+                    <button class="union">Union</button>
+                    <button class="random" id="random">Random</button>
+                    <button class="rainbow">Rainbow</button>
+                    <button class="reset">Reset</button>
+                </div>
+                <div class=border>
+                    <img id='border' class="inBorder" src ="images/etchasketch.png" alt = "Etch a Sketch">
+                    <div class="inBorder" id="container"></div>
+                </div>
             </div>
         </div>
-    </div>
-    <div class="pixelSlider">
-        <h2>Pixels per Side</h2>
-    <input type="range" min="5" max="100" value="10" class='slider' id='pixelSide'><p class="currentPixels">Value: <span id="demo"></span></p>
-    </div>
-    <div class="colorPickers">
-        <label for="colorPickerBackground">Choose a background color:</label>
-        <input type="color" id="colorPickerBackground" value="#0000ff">
-        <label for="colorPickerDraw">Choose a drawing color:</label>
-        <input type="color" id="colorPickerDraw" value="#ff00ff">
-        <button id="applyUserColors">Apply Choice</button>
-    </div>
+        <div class="pixelSlider">
+            <h2>Pixels per Side</h2>
+            <input type="range" min="5" max="100" value="10" class='slider' id='pixelSide'>
+            <p class="currentPixels">Value: <span id="demo"></span></p>
+        </div>
+        <div class="colorPickers">
+            <label for="colorPickerBackground">Choose a background color:</label>
+            <input type="color" id="colorPickerBackground" value="#0000ff">
+            <label for="colorPickerDraw">Choose a drawing color:</label>
+            <input type="color" id="colorPickerDraw" value="#ff00ff">
+            <button id="applyUserColors">Apply Choice</button>
+        </div>
     </div>
 <script src="scripts.js"></script>
 </body>

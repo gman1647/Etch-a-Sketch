@@ -1,36 +1,15 @@
-INSTRUCTIONS:
-Create a webpage with a 16x16 grid of square divs.
+This project utilizes a hover event listener to color pixels over which the mouse passes. The user can also select the pixel size from 5 pixels per side up to 100 pixels per side.
 
-Done: Create the divs using JavaScript. Don’t try making them by hand with copy and pasting in your HTML file!
-    It’s best to put your grid squares inside another “container” div (which can go directly in your HTML).
-    There are several different ways to make the divs appear as a grid (versus just one on each line). Feel free to use any or play with each of them:
-        float/clear
-        inline-block
-        flexbox
-        CSS Grid
-    Be careful with borders and margins, as they can adjust the size of the squares!
+The page is laid out using mostly flex box. The color buttons and drawing board are in a flex container. The color buttons move to the top of the page using a media query when the screen width is narrow. The Etch a Sketch is a fixed width and is not designed for use on mobile devices.
 
-Done: “OMG, why isn’t my grid being created???”
-    Did you link your CSS stylesheet?
-    Open your browser’s developer tools.
-    Check if there are any errors in the JavaScript console.
-    Check your “elements” pane to see if the elements have actually shown up but are somehow hidden.
-    Go willy-nilly and add console.log statements in your JavaScript to see if it’s actually being loaded.
+The color buttons allow a choice of the background and drawing colors. The color of the button background is the same as the background color in the etchasketch when clicked. The text matches the drawing color.
 
-Done: Set up a “hover” effect so that the grid divs change color when your mouse passes over them, leaving a (pixelated) trail through your grid like a pen would.
-    Hint: “Hovering” is what happens when your mouse enters a div and ends when your mouse leaves it. You can set up event listeners for either of those events as a starting point.
-    There are multiple ways to change the color of the divs, including:
-        adding a new class to the div.
-        changing the div’s background color using JavaScript.
+A random color selector function was used to generate a random hexidecimal color key to be used for the random and rainbow buttons. The random button selects background and draw colors at random. The rainbow button applies a random color to each pixel. The colors are generated when the board is created based on the id of each pixel. The pixel ids were generated in a loop.
 
-Done: Add a button to the top of the screen that will send the user a popup asking for the number of squares per side for the new grid. Once entered, the existing grid should be removed and a new grid should be generated in the same total space as before (e.g. 960px wide) so that you’ve got a new sketch pad. 
-    Tip: Set the limit for the user input to a maximum of 100. A larger number of squares results in more computer resources being used, potentially causing delays, freezing, or crashing that we want to prevent.
-    Research button tags in HTML and how you can make a JavaScript function run when one is clicked.
-    Also check out prompts.
-    You should be able to enter 64 and have a brand new 64x64 grid pop up without changing the total amount of pixels used.
+Finally, the user can select their own drawing and board color using the color input buttons. These are applied to the board when the "apply choice" button is clicked. 
 
-Push your project to GitHub!
+The design of the page is a bit 90s looking and could use some work, but this project was mostly about building the page and using the event listeners. 
 
-Extra Credit
-    Instead of just changing the color of a square from black to white (for example), have each pass through with the mouse change it to a completely random RGB value. Then try having each pass just add another 10% of black to it so that only after 10 passes is the square completely black.
+The frame for the etch a sketch was built using a fair use image that was modified to be square using GIMP.
 
+This was fun project. Learning to work with colors was enjoyable. Building the board itself was challenging. I initially overthought the process of generating the board. I initially thought that I build a number of rows with a number of pixels in each (eg. 10 rows of 10 pixels each). I ended up using a flexbox using a function to generate pixel size to add all the pixels in a loop. It works, but may not be the most efficient way to do it. That was the most difficult of the project.
