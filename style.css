@@ -41,6 +41,7 @@ button {
     width: 200px;
     font-size: 1.3em;
     font-weight: 700;
+    text-align: left;
 }
 
 .border {
@@ -77,32 +78,33 @@ button {
 
 .blackAndWhite {
     color: black;
-    background-color: white;
+    background: linear-gradient(45deg, white, white 60%, black 95%);
 }
 
 .whiteAndBlack {
     color: white;
-    background-color: black;
+    background: linear-gradient(45deg, black, black 60%, white 95%);
 }
 
 .eagles {
     color:#A5ACAF;
-    background-color:#004C54;
+    background:linear-gradient(45deg,#004C54, #004C54 60%, #A5ACAF 95%);
 }
 
 .phils {
     color:#E81828;
-    background-color:#002D72;
+    background: linear-gradient(45deg, #002D72, #002D72 60%, #E81828 95%);
 }
 
 .flyers {
     color:#000000;
-    background-color:#F74902;
+    background:linear-gradient(45deg, #F74902, #F74902 60%, #000000 95%)
 }
 
 .union {
     color:#B19B69;
     background-color:#071B2C;
+    background:linear-gradient(45deg, #071B2c, #071B2C 60%, #B19B69 95%)
 }
 
 .rainbow {
