@@ -59,8 +59,8 @@ button {
 }
 
 #container {
-    width: 500px;
-    height: 500px;
+    width: 520px;
+    height: 520px;
     flex-shrink: 0;
     display: flex;
     flex-wrap: wrap;
@@ -73,7 +73,7 @@ button {
 
 .classic, .reset {
     color: #646665;
-    background-color: rgb(187,187,198);
+    background-color: #BBBBC6;
 }
 
 .blackAndWhite {
@@ -88,7 +88,7 @@ button {
 
 .eagles {
     color:#A5ACAF;
-    background:linear-gradient(45deg,#004C54, #004C54 60%, #A5ACAF 95%);
+    background:linear-gradient(45deg,#004C54, #004C54 60%,#A5ACAF 95%);
 }
 
 .phils {
@@ -158,3 +158,4 @@ padding: 0 70px;
     margin-left: 15px;
     border-color: #f7d89e;
 }
+
