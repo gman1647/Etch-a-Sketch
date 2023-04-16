@@ -51,7 +51,7 @@
 
 :root.rainbow {
     color: white;
-    background: linear-gradient(-25deg, black 45%, rgba(255,0,0,0.5),rgba(255, 127, 0, 0.5),rgba(255, 255, 0, 0.5),rgba(0, 255, 0, 0.5),rgba(0, 0, 225, 0.5),rgba(75, 0, 130, 0.5), rgba(148, 0, 211, 0.5), black 75%);
+    background: linear-gradient(-25deg, black 45%, rgba(255,0,0,0.65),rgba(255, 127, 0, 0.65),rgba(255, 255, 0, 0.65),rgba(0, 255, 0, 0.65),rgba(0, 0, 225, 0.65),rgba(75, 0, 130, 0.65), rgba(148, 0, 211, 0.65), black 75%);
 }
 
 * {
