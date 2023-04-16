@@ -7,6 +7,7 @@ let pixelSize = makePixelsSquare(containerWidth,width)
 let drawColor = "#646665";
 let boardColor = "rgb(187,187,198)";
 const container = document.getElementById("container");
+let styles = window.getComputedStyle(document.body);
 
 //creates the initial board
 makePixelsSquare(containerWidth,width);
@@ -48,8 +49,10 @@ function clearBoard () {
 let classicButton = document.querySelector('.classic');
 classicButton.addEventListener("click", () => {
     clearBoard()
-    let drawColor = "#646665";
-    let boardColor = "rgb(187,187,198)";
+    let drawColor = styles.getPropertyValue('--classic-text');
+    let boardColor = styles.getPropertyValue('--classic-bg');
+    root = document.documentElement;
+    root.className = 'classic';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -58,8 +61,10 @@ classicButton.addEventListener("click", () => {
 let blackAndWhiteButton = document.querySelector('.blackAndWhite');
 blackAndWhiteButton.addEventListener("click", () => {
     clearBoard()
-    let drawColor = "#000000";
-    let boardColor = "#eeeeee";
+    let drawColor = "black";
+    let boardColor = "white";
+    root = document.documentElement;
+    root.className = 'blackAndWhite';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -70,6 +75,8 @@ WhiteAndBlackButton.addEventListener("click", () => {
     clearBoard()
     let drawColor = "#eeeeee";
     let boardColor = "#000000";
+    root = document.documentElement;
+    root.className = 'whiteAndBlack';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 
@@ -79,8 +86,10 @@ WhiteAndBlackButton.addEventListener("click", () => {
 let eaglesButton = document.querySelector('.eagles');
 eaglesButton.addEventListener("click", () => {
     clearBoard()
-    let drawColor = "#A5ACAF";
-    let boardColor = "#004C54";
+    let drawColor = styles.getPropertyValue('--eagles-text');
+    let boardColor = styles.getPropertyValue('--eagles-bg');
+    root = document.documentElement;
+    root.className = 'eagles';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -89,8 +98,10 @@ eaglesButton.addEventListener("click", () => {
 let philsButton = document.querySelector('.phils');
 philsButton.addEventListener("click", () => {
     clearBoard()
-    let drawColor = "#E81828";
-    let boardColor = "#002D72";
+    let drawColor = styles.getPropertyValue('--phillies-text');
+    let boardColor = styles.getPropertyValue('--phillies-bg');
+    root = document.documentElement;
+    root.className = 'phils';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -100,7 +111,9 @@ let flyersButton = document.querySelector('.flyers');
 flyersButton.addEventListener("click", () => {
     clearBoard()
     let drawColor = "#000000";
-    let boardColor = "#F74902";
+    let boardColor = styles.getPropertyValue('--flyers-bg');
+    root = document.documentElement;
+    root.className = 'flyers';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -109,8 +122,10 @@ flyersButton.addEventListener("click", () => {
 let unionButton = document.querySelector('.union');
 unionButton.addEventListener("click", () => {
     clearBoard()
-    let drawColor = "#b19b69";
-    let boardColor = "#071b2c";
+    let drawColor = styles.getPropertyValue('--union-text');
+    let boardColor = styles.getPropertyValue('--union-bg');
+    root = document.documentElement;
+    root.className = 'union';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -126,6 +141,8 @@ function randomColor () {
 let randomButton = document.querySelector('.random');
 randomButton.addEventListener('click', () => {
     clearBoard()
+    root = document.documentElement;
+    root.className = 'classic';
     let drawColor = randomColor();
     let boardColor = randomColor();
     makePixelsSquare(containerWidth, width);
@@ -142,6 +159,8 @@ let rainbowButton = document.querySelector('.rainbow');
 rainbowButton.addEventListener('click', () => {
     clearBoard()
     let boardColor = "#000000";
+    root = document.documentElement;
+    root.className = 'rainbow';
     makePixelsSquare(containerWidth, width);
     addRowsRainbow(width,boardColor);
   });
@@ -167,6 +186,8 @@ function addRowsRainbow (rows,boardColor){
 let resetButton = document.querySelector('.reset');
 resetButton.addEventListener("click", () => {
     clearBoard()
+    root = document.documentElement;
+    root.className = 'classic';
     makePixelsSquare(containerWidth, width);
     addRows(width,drawColor,boardColor);
 });
@@ -186,6 +207,8 @@ sliderWidth.onmouseup = function() {
 //sets the board to a background color chosen by the player with a draw color chosen by the player
 let playerChoiceButton = document.querySelector('#applyUserColors');
 playerChoiceButton.addEventListener('click', () => {
+    root = document.documentElement;
+    root.className = 'classic';
     let playerColorBackground = document.getElementById('colorPickerBackground').value;
     let playerDrawColor = document.getElementById('colorPickerDraw').value;
     clearBoard()

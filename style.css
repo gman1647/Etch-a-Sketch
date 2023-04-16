@@ -1,4 +1,6 @@
 :root {
+    color: #bbbbc6;
+    background: #646665;
     --default-text: #f7d89e;
     --default-bg: #222222;
     --classic-text: #646665;
@@ -11,9 +13,48 @@
     --union-text: #b19b69;
     --union-bg: #071b2c;
 }
+
+:root.blackAndWhite {
+    color: black;
+    background: white;
+}
+
+:root.whiteAndBlack {
+    color: white;
+    background: black;
+}
+
+:root.eagles {
+    color: var(--eagles-text);
+    background: var(--eagles-bg);
+}
+
+:root.phils {
+    color: var(--phillies-text);
+    background: var(--phillies-bg);
+}
+
+:root.flyers {
+    color: var(--flyers-bg);
+    background: black;
+}
+
+:root.union {
+    color: var(--union-text);
+    background: var(--union-bg);
+}
+
+:root.classic {
+    color: var(--classic-bg);
+    background: var(--classic-text);
+}
+
+:root.rainbow {
+    color: white;
+    background: linear-gradient(-45deg, black 45%, red,orange,yellow,green,blue,indigo,violet, black 75%);
+}
+
 * {
-    color: var(--default-text);
-    background-color: var(--default-bg);
     font-family: Sevillana, 'Dancing Script', 'Times New Roman', serif;
     font-style: italic;
 }
@@ -29,7 +70,7 @@
 
 #userInputs {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-evenly;
     flex-wrap: wrap;
 }
 
@@ -37,7 +78,7 @@
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
 }
 
 @media (max-width: 940px) {
@@ -139,7 +180,7 @@ button:hover {
     appearance: none;
     width: 100%;
     height: 15px;
-    background: #d3d3d3d3;
+    background: var(--classic-bg);
     opacity: 0.7;
     transition: opacity .2s;
     max-width: 700px;
@@ -154,7 +195,8 @@ button:hover {
     appearance: none;
     width: 50px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
-    background: #f7d89e; /* Green background */
+    background: var(--classic-text); /* Green background */
+    border: 1px solid var(--classic-bg);
     cursor: pointer; /* Cursor on hover */
     border-radius: 5px;
 }
@@ -172,12 +214,14 @@ padding: 0 70px;
     background-color: transparent;
 }
 
-#applyUserColors {
+.applyUserColors {
     margin-left: 15px;
-    border-color: var(--default-text);
+    border: 2px solid var(--classic-text);
+    color: var(--classic-text);
+    background: var(--classic-bg);
     text-align: center;
 }
 
-#applyUserColors:hover {
+.applyUserColors:hover {
     cursor: pointer;
 }
