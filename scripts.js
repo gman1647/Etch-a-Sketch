@@ -175,7 +175,7 @@ resetButton.addEventListener("click", () => {
 let sliderWidth = document.getElementById('pixelSide')
 let output = document.getElementById('demo')
 output.textContent = sliderWidth.value;
-sliderWidth.oninput = function() {
+sliderWidth.onmouseup = function() {
     clearBoard();
     output.textContent = this.value;
     width = this.value;

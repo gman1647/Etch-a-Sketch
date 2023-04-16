@@ -1,6 +1,19 @@
+:root {
+    --default-text: #f7d89e;
+    --default-bg: #222222;
+    --classic-text: #646665;
+    --classic-bg: #bbbbc6;
+    --eagles-text: #a5acaf;
+    --eagles-bg: #004c54;
+    --phillies-text: #e81828;
+    --phillies-bg: #002d72;
+    --flyers-bg: #f74902;
+    --union-text: #b19b69;
+    --union-bg: #071b2c;
+}
 * {
-    color: #f7d89e;
-    background-color: #222222;
+    color: var(--default-text);
+    background-color: var(--default-bg);
     font-family: Sevillana, 'Dancing Script', 'Times New Roman', serif;
     font-style: italic;
 }
@@ -44,6 +57,10 @@ button {
     text-align: left;
 }
 
+button:hover {
+    cursor: pointer;
+}
+
 .border {
     position: relative;
     height: 711px;
@@ -72,8 +89,8 @@ button {
 }
 
 .classic, .reset {
-    color: #646665;
-    background-color: #BBBBC6;
+    color: var(--classic-text);
+    background-color: var(--classic-bg);
 }
 
 .blackAndWhite {
@@ -87,29 +104,29 @@ button {
 }
 
 .eagles {
-    color:#A5ACAF;
-    background:linear-gradient(45deg,#004C54, #004C54 60%,#A5ACAF 95%);
+    color:var(--eagles-text);
+    background:linear-gradient(45deg, var(--eagles-bg) 60%,#A5ACAF 95%);
 }
 
 .phils {
-    color:#E81828;
-    background: linear-gradient(45deg, #002D72, #002D72 60%, #E81828 95%);
+    color: var(--phillies-text);
+    background: linear-gradient(45deg, var(--phillies-bg) 60%, var(--phillies-text) 95%);
 }
 
 .flyers {
     color:#000000;
-    background:linear-gradient(45deg, #F74902, #F74902 60%, #000000 95%)
+    background:linear-gradient(45deg, var(--flyers-bg) 60%, #000000 95%)
 }
 
 .union {
-    color:#B19B69;
-    background-color:#071B2C;
-    background:linear-gradient(45deg, #071B2c, #071B2C 60%, #B19B69 95%)
+    color: var(--union-text);
+    background-color: var(--union-bg);
+    background:linear-gradient(45deg, var(--union-bg) 60%, var(--union-text) 95%)
 }
 
 .rainbow {
     color:black;
-    background-image: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
+    background: linear-gradient(to right, red,orange,yellow,green,blue,indigo,violet);
 }
 
 .pixelSlider {
@@ -123,22 +140,23 @@ button {
     width: 100%;
     height: 15px;
     background: #d3d3d3d3;
-    border: 1px solid red;
     opacity: 0.7;
     transition: opacity .2s;
     max-width: 700px;
     display: block;
     margin-left: auto;
     margin-right: auto;
+    border-radius: 5px;
 }
 
 .slider::-webkit-slider-thumb {
     -webkit-appearance: none; /* Override default look */
     appearance: none;
-    width: 25px; /* Set a specific slider handle width */
+    width: 50px; /* Set a specific slider handle width */
     height: 25px; /* Slider handle height */
     background: #f7d89e; /* Green background */
     cursor: pointer; /* Cursor on hover */
+    border-radius: 5px;
 }
 
 .slider:hover{
@@ -156,6 +174,10 @@ padding: 0 70px;
 
 #applyUserColors {
     margin-left: 15px;
-    border-color: #f7d89e;
+    border-color: var(--default-text);
+    text-align: center;
 }
 
+#applyUserColors:hover {
+    cursor: pointer;
+}
